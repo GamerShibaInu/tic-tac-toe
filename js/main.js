@@ -110,17 +110,49 @@ function xWon(){
    xWon()
    blinkTimer = setTimeout(clearBoxes, 1002)
   }
+const xLeaderboard = document.querySelector(".plr-one-score");
+const oLeaderboard = document.querySelector(".plr-two-score");
+let xWins = 0
+let oWins = 0
+const addWinsX = xWins = xWins + 1
+  function addWinX(){
+    xLeaderboard.textContent = visitedPlrOne + " has " + addWinsX + " wins";
+  }
   
   
 // win conditions X
 function winCheck(){
   if (box1.textContent =="x" && box2.textContent =="x" && box3.textContent =="x") {
     whosTurn.textContent = visitedPlrOne + " won!"
+    addWinX()
     xWinner()
 } else if (box4.textContent =="x" && box5.textContent =="x" && box6.textContent =="x"){
+  addWinX()
   xWinner()
   whosTurn.textContent = visitedPlrOne + " won!"
 } else if (box7.textContent =="x" && box8.textContent =="x" && box9.textContent =="x"){
+  addWinX()
+  xWinner()
+  whosTurn.textContent = visitedPlrOne + " won!"
+} else if (box1.textContent =="x" && box4.textContent =="x" && box7.textContent =="x"){
+  addWinX()
+  xWinner()
+  whosTurn.textContent = visitedPlrOne + " won!"
+}
+else if (box2.textContent =="x" && box5.textContent =="x" && box8.textContent =="x"){
+  addWinX()
+  xWinner()
+  whosTurn.textContent = visitedPlrOne + " won!"
+} else if (box3.textContent =="x" && box6.textContent =="x" && box9.textContent =="x"){
+  addWinX()
+  xWinner()
+  whosTurn.textContent = visitedPlrOne + " won!"
+} else if (box1.textContent =="x" && box5.textContent =="x" && box9.textContent =="x"){
+  addWinX()
+  xWinner()
+  whosTurn.textContent = visitedPlrOne + " won!"
+} else if (box3.textContent =="x" && box5.textContent =="x" && box7.textContent =="x"){
+  addWinX()
   xWinner()
   whosTurn.textContent = visitedPlrOne + " won!"
 }
