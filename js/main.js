@@ -18,12 +18,19 @@ window.localStorage.setItem('PlrTwo', plrTwoName);
 
 //turns
 const squares = document.querySelectorAll('.square');
-
+let plrTurn = "x"
 for (let index = 0; index < squares.length; index++) {
-  const x = squares[index];
-  x.addEventListener("click", function(){
-    x.textContent = "x";
+  const square = squares[index];
+  square.addEventListener("click", function() {
+    if (square.textContent === "") {
+      square.textContent = plrTurn;
+      if (plrTurn === "x") {
+        plrTurn = "o";
+      } else {
+        plrTurn = "x";
+      }
+    }
   });
-  
 }
+
 
