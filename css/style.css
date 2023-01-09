@@ -50,17 +50,24 @@ body{
   border: 2px solid #333;
   border-radius: 6px;
   margin: auto;
+  margin-top: 5px;
   text-align: center;
   background-color: rgb(7, 168, 7);
   width: 500px
-
 }
 
 .scoreboard{
+  font-size: 50px;
   border: 2px solid #333;
   border-radius: 6px;
     background-color: rgb(7, 168, 7);
     margin: auto;
+    margin-top: 5px;
     width: 500px
 }
-
+.plr-one-score{
+  text-align: center
+}
+.plr-two-score{
+  text-align: center
+}
