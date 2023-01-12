@@ -33,7 +33,7 @@ window.localStorage.setItem("plrTwo", plrTwoName);
   vPlrOne.textContent = visitedPlrOne;
  
   vPlrTwo = document.querySelector(".plr-two");
-  vPlrTwo.textContent = visitedPlrTwo;
+  vPlrTwo.textContent = "Bot";
     alert("Welcome back!");
 }
 
@@ -44,7 +44,7 @@ let plrTurn = "x"
 let whosTurn = document.querySelector(".turn-text");
 window.localStorage.getItem("plrTwo");
 window.localStorage.getItem("plrOne");
-plrTwoName = visitedPlrTwo
+plrTwoName = "Bot"
 plrOneName = visitedPlrOne
 whosTurn.textContent = "its " + plrOneName + "'s turn!";
 for (let index = 0; index < squares.length; index++) {
