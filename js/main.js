@@ -226,3 +226,4 @@ else if (box2.textContent =="x" && box5.textContent =="x" && box8.textContent ==
 
 }
 }
+console.log("JavaSCript loaded successfully.")
