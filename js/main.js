@@ -16,8 +16,9 @@ if (newVisit == undefined) {
   // new visitor
    localStorage.setItem("newVisit", 1);
    alert("Welcome!");
-  askPlr1()
-  askPlr2()
+  askPlr1();
+  askPlr2();
+  location.reload();
    // add player names
 const addPlrName1 = document.querySelector(".plr-one");
 addPlrName1.textContent = plrOneName;
@@ -31,10 +32,10 @@ window.localStorage.setItem("plrTwo", plrTwoName);
 } else { // already visited
   vPlrOne = document.querySelector(".plr-one");
   vPlrOne.textContent = visitedPlrOne;
- 
+
   vPlrTwo = document.querySelector(".plr-two");
   vPlrTwo.textContent = visitedPlrTwo;
-    alert("Welcome back!");
+
 }
 
 //turns
@@ -52,10 +53,6 @@ for (let index = 0; index < squares.length; index++) {
   square.addEventListener("click", function() {
     if (square.textContent === "") {
       square.textContent = plrTurn;
-      drawCounter++
-      if (drawCounter == 9) {
-        whosTurn.textContent = "its a draw!";
-      }
       if (plrTurn === "x") {
         whosTurn.textContent = "its " + plrOneName + "'s turn!";
         plrTurn = "o";
@@ -68,8 +65,6 @@ for (let index = 0; index < squares.length; index++) {
     }
   });
 }
-
-
 
 
 // square variables
@@ -94,6 +89,8 @@ function clearBoxes(){
   box7.textContent = ""
   box8.textContent = ""
   box9.textContent = ""
+
+  
 }
   //winning player symbol (X)
 function xWon(){
@@ -120,6 +117,9 @@ function xWon(){
     box8.textContent = "o"
     box9.textContent = "o"
     }
+
+const resetButton = document.querySelector(".resetBtn");
+resetButton.addEventListener("click", clearBoxes)
     // X win flash
   function xWinner(){
     xWon()
@@ -131,7 +131,7 @@ function xWon(){
       // O win flash
       function oWinner(){
         oWon()
-       let blinkTimer = setTimeout(clearBoxes, 1001)
+       let blinkTimer = setTimeout(clearBoxes, 1002)
        oWon()
        blinkTimer = setTimeout(clearBoxes, 1002)
       }
@@ -151,13 +151,10 @@ let oWins = 0
   }
 
   function addWinO(){
+    oWins = oWins + 1
     oLeaderboard.textContent = plrTwoName + " has " + oWins + " wins";
   }
-  
-  
-  // save leaderboard in local storage
-  const saveLeaderboardX = window.localStorage.setItem("xWinsAmount", xWins);
-  const saveLeaderboardO = window.localStorage.setItem("oWinsAmount", oWins);
+
 // win conditions X
 function winCheck(){
   if (box1.textContent =="x" && box2.textContent =="x" && box3.textContent =="x") {
@@ -193,6 +190,7 @@ else if (box2.textContent =="x" && box5.textContent =="x" && box8.textContent ==
   addWinX()
   xWinner()
   whosTurn.textContent = plrTwoName + " won!"
+  // o win conditions
 }else if (box1.textContent =="o" && box2.textContent =="o" && box3.textContent =="o"){
   addWinO()
   oWinner()
@@ -225,6 +223,6 @@ else if (box2.textContent =="x" && box5.textContent =="x" && box8.textContent ==
   addWinO()
   oWinner()
   whosTurn.textContent = plrTwoName + " won!"
-}
-}
 
+}
+}

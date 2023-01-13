@@ -1,6 +1,6 @@
 body{
   background-color: rgb(61, 236, 31);
-  user-select: none;
+  user-select:none;
   font-size: 65px;
   -webkit-text-stroke: 2px;
   -webkit-text-fill-color: rgb(255, 140, 0);
@@ -70,4 +70,11 @@ body{
 }
 .plr-two-score{
   text-align: center
+}
+.resetBtn{
+
+  font-size: 45px;
+  background-color: green;
+  width: 100%;
+  height: 30%;
 }
