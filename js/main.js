@@ -18,7 +18,6 @@ if (newVisit == undefined) {
    alert("Welcome!");
   askPlr1();
   askPlr2();
-  location.reload();
    // add player names
 const addPlrName1 = document.querySelector(".plr-one");
 addPlrName1.textContent = plrOneName;
@@ -27,8 +26,8 @@ const addPlrName2 = document.querySelector(".plr-two");
 addPlrName2.textContent = plrTwoName;
 
 // save player names
-window.localStorage.setItem("plrOne", plrOneName);
-window.localStorage.setItem("plrTwo", plrTwoName);
+localStorage.setItem("plrOne", plrOneName);
+localStorage.setItem("plrTwo", plrTwoName);
 } else { // already visited
   vPlrOne = document.querySelector(".plr-one");
   vPlrOne.textContent = visitedPlrOne;
